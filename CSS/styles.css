@@ -14,6 +14,8 @@ html{
     --color-accent:#ff3400; 
     --color-headings: #1b0760;
     --color-body:#918ca4;
+    --color-border:#ccc;
+    --border-radius:30px;
   }
 body{
     font-family: Inter,Arial,Arial, Helvetica, sans-serif;
@@ -180,10 +182,10 @@ ul{
     border: 0;
     font-size: 1.8rem;
     font-weight: 600;
+    margin: 1REM 0;
     padding: 2rem 3rem;
     text-transform: uppercase;
     white-space: nowrap;
-    margin: 1REM 0;
    cursor: pointer;
    text-align: center;
 }
@@ -244,8 +246,8 @@ ul{
 /*inputs*/
 
 .input{
-    border-radius: 30px;
-    border: 2px solid #ccc;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-border);
     color: var(--color-headings);
     font-size: 2rem;
     outline: 0;
@@ -257,9 +259,46 @@ ul{
     color: #cdcbc7;
 }
 
+.input-group{
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: flex;
+}
+
+.input-group .input{
+    padding: 1.5rem 1rem ;
+    border: 0;
+    flex-grow: 1;
+}
+.input-group .btn{
+    margin: 4px;
+}
+
 @media screen and (min-width:1024px) {
     .input{
         font-size: 1.5rem;
     }
     
 }
+/*Card*/
+
+.card{
+    border-radius: 7px;
+    box-shadow: 0 0 20px 10px #f3f3f3 ;
+   overflow: hidden;
+}
+.card__header,.card__body{
+    padding: 2rem 3rem;
+}
+
+.card--primary .card__header{
+    color: white;
+    background: var(--color-primary);
+}
+
+.card--secondary .card__header{
+    color: white;
+    background: var(--color-secondary);
+}
+
+
