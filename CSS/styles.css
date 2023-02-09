@@ -496,9 +496,9 @@ ul{
 
 
 @media screen and (min-width:768px) {
-    .grid--1x3{
+    .grid--1x2{
        
-        grid-template-columns: repeat(3,1fr) ;
+        grid-template-columns: repeat(2,1fr) ;
     }
    
 }
@@ -748,4 +748,28 @@ ul{
  .block-plans .card{
     max-width: 500px;
     margin: 0 auto;
+ }
+
+ /*Features*/
+.feature{
+    gap: 4rem 2rem;
+    margin: 12rem 0;
+}
+ .feature__heading{
+    margin: 1rem 0;
+ }
+ .feature__image{
+    width: 100%;
+ }
+
+ .feature:first-of-type{
+    margin-top: 6rem;
+ }
+ 
+ @media screen and (min-width:768px) {
+    .feature:nth-of-type(even)  .feature__content{
+        order: 2;
+
+    }
+    
  }
