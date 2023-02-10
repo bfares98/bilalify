@@ -1,4 +1,8 @@
 /*Typograpgy*/
+::selection{
+    background-color: var(--color-primary);
+    color: white;
+}
 
 html{
     font-size: 62.5%;
@@ -62,6 +66,7 @@ p{
     }
     h3{
         font-size: 2.4rem;
+        font-weight: 500;
     }
     
 }
@@ -131,7 +136,7 @@ a{
 
 ul{
     list-style: none;
-    color: var(--color-headings);
+    
     padding-left: 0;
 
 }
@@ -144,6 +149,7 @@ ul{
 .list--tick{
     list-style-image: url(../images/tick.svg);
     padding-left: 3rem;
+    color: var(--color-headings);
 }
 
 .list--tick .list--tick{
@@ -424,6 +430,7 @@ ul{
 
 .media{
     display: flex;
+    margin-bottom: 4rem;
 }
 
  .media__title{
@@ -615,12 +622,20 @@ ul{
     background: black;
     color: #7b858b;
 }
-.block--dark .block__heading{
+.block--dark h1,
+.block--dark h2,
+.block--dark h3{
     color: white;
 }
 
 .block--skewed--left{
-    clip-path: polygon(0% 0%, 100% 0%, 100% 86%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+    padding-bottom:calc(var(--padding-vertical) + 4rem) ; 
+
+}
+
+.block--skewed--right{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
     padding-bottom:calc(var(--padding-vertical) + 4rem) ; 
 
 }
@@ -699,9 +714,7 @@ ul{
 
 }
 
-.hero{
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
+
 @media screen and (min-width:768px) {
     .hero{
         padding-top: 0;
@@ -772,4 +785,23 @@ ul{
 
     }
     
+ }
+
+ /*Showcase*/
+ .block-showcase__image > img{
+    width: 100%;
+ }
+
+ @media screen and (min-width:768px) {
+    .block-showcase .grid{
+        grid-template-columns: 50% 50%;
+    }
+    .block-showcase__image{
+       
+        justify-self: end;
+     }
+    .block-showcase__image > img{
+        width: auto;
+        max-width: 700px;
+    }
  }
